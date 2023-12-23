@@ -42,6 +42,5 @@ The Kanban Board is a web application that helps users manage tasks by organizin
 
 4. Run the development server:
 
-  ```bash
   npm start
 
