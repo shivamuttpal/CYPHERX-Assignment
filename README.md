@@ -7,10 +7,7 @@ A simple Kanban Board web application built with React and Tailwind CSS, allowin
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
