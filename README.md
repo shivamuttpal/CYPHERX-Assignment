@@ -28,4 +28,20 @@ The Kanban Board is a web application that helps users manage tasks by organizin
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/shivamuttpal/CYPHERX-Assignment.git
+
+2. Change into the project directory:
+
+   ```bash
+   cd kanban-board
+
+3. Install dependencies:
+
+  ```bash
+  npm install
+
+4. Run the development server:
+
+  ```bash
+  npm start
+
