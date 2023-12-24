@@ -14,11 +14,11 @@ const KanbanBoard = ({ groupingOption, orderingOption, isDarkMode, data }) => {
       data.tickets.forEach((ticket) => {
         // Mapping priority to groupKey based on your requirements
         const priorityMapping = {
-          4: 'Urgent',
-          3: 'High',
-          2: 'Medium',
-          1: 'Low', 
           0: 'No priority',
+          1: 'Low', 
+          2: 'Medium',
+          3: 'High',
+          4: 'Urgent'
         };
 
         const groupKey = priorityMapping[ticket.priority];
@@ -56,7 +56,7 @@ const KanbanBoard = ({ groupingOption, orderingOption, isDarkMode, data }) => {
   };
 
   return (
-    <div className={`bg-${isDarkMode ? 'black' : 'white'} text-${isDarkMode ? 'white' : 'black'} p-4 min-h-screen`}>
+    <div className={`p-4 min-h-screen`}>
       <div className="flex flex-wrap justify-start">
         {Object.keys(groupedAndSortedTickets).map((groupKey, index) => (
           <div

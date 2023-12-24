@@ -1,5 +1,5 @@
 // components/NavigationBar.js
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -18,6 +18,15 @@ const NavigationBar = ({ onGroupingChange, onOrderingChange, onThemeToggle, isNi
   const [orderingOption, setOrderingOption] = React.useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+
+  useEffect(() => {
+    // This effect will run whenever isDarkMode changes
+    // You can place the logic you want to run on isDarkMode change here
+    // For example, updating the theme of the navigation bar
+    document.body.style.backgroundColor = isDarkMode ? 'black' : 'white';
+    document.body.style.color = isDarkMode ? 'white' : 'black';
+  }, [isDarkMode]); 
+ 
   const handleChange = (event, type) => {
     if (type === 'grouping') {
       setGroupingOption(event.target.value);
@@ -40,7 +49,7 @@ const NavigationBar = ({ onGroupingChange, onOrderingChange, onThemeToggle, isNi
 
   const handleThemeToggle = () => {
     setIsDarkMode(!isDarkMode);
-    onThemeToggle();
+    onThemeToggle(!isDarkMode);
   };
 
   return (
@@ -49,7 +58,7 @@ const NavigationBar = ({ onGroupingChange, onOrderingChange, onThemeToggle, isNi
       <Button className={`text-${isDarkMode ? 'white' : 'black'}`} onClick={handleClickOpen}>
         Display
       </Button>
-      <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
+      <Dialog disableEscapeKeyDown open={open}>
         <DialogTitle>Display Options</DialogTitle>
         <DialogContent>
           <Box component="form" sx={{ display: 'flex', flexWrap: 'wrap' }}>
